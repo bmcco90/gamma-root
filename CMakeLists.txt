@@ -149,6 +149,7 @@ foreach(inc ${includes})
 endforeach()
 
 configure_file(${PROJECT_SOURCE_DIR}/gamrlogon.cc.in ${PROJECT_BINARY_DIR}/gamrlogon.cc @ONLY)
+configure_file(${PROJECT_SOURCE_DIR}/gamrlogon_user.cc.in ${PROJECT_BINARY_DIR}/gamrlogon_user.cc @ONLY)
 install(FILES ${PROJECT_BINARY_DIR}/gamrlogon.cc DESTINATION ${GAMR_INSTALL_DATADIR})
-install(FILES ${PROJECT_SOURCE_DIR}/gamrlogon_user.cc DESTINATION ${GAMR_INSTALL_DATADIR})
+install(FILES ${PROJECT_BINARY_DIR}/gamrlogon_user.cc DESTINATION ${GAMR_INSTALL_DATADIR})
 

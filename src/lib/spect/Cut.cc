@@ -258,7 +258,7 @@ namespace GamR {
       while(true) {
         GamR::TK::Gate bg;
         int retval = bg.SetGate(canvas, "x");
-        if (retval<0) { break; }
+        if (retval>0) { break; }
         background.push_back(bg);
       }
 
@@ -280,7 +280,7 @@ namespace GamR {
       while(true) {
         GamR::TK::Gate bg;
         int retval = bg.SetGate(canvas, "x");
-        if (retval<0) { break; }
+        if (retval>0) { break; }
         background.push_back(bg);
       }
 
@@ -382,7 +382,7 @@ namespace GamR {
       while(true) {
         GamR::TK::Gate bg;
         int retval = bg.SetGate(canvas, "x");
-        if (retval<0) { break; }
+        if (retval>0) { break; }
         background.push_back(bg);
       }
 
@@ -405,7 +405,7 @@ namespace GamR {
       while(true) {
         GamR::TK::Gate bg;
         int retval = bg.SetGate(canvas, "x");
-        if (retval<0) { break; }
+        if (retval>0) { break; }
         background.push_back(bg);
       }
 

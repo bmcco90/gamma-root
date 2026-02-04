@@ -92,6 +92,7 @@ void rb(TVirtualPad *canvas = NULL, int rebin = 2);
 void ns(TVirtualPad *canvas = NULL, Option_t *option = "");
 void nsbs(TVirtualPad *canvas = NULL);
 void rn(TVirtualPad *canvas = NULL);
+void cs(TVirtualPad *canvas = NULL);
 
 //2-D
 void ls2();

@@ -37,6 +37,7 @@ namespace GamR {
     void ZoomAllY(double low, double high, TVirtualPad *canvas = NULL);
     void UnZoomAllX(TVirtualPad *canvas = NULL);
     void UnZoomAllY(TVirtualPad *canvas = NULL);
+    void Cursor(TVirtualPad *canvas = NULL);
 
     void NormSpectra(TVirtualPad *canvas = NULL, Option_t *option = "");
     void NormSpectraBackSub(TVirtualPad *canvas = NULL);

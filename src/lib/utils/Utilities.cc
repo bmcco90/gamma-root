@@ -124,7 +124,7 @@ namespace GamR {
       }
     }
 
-    int Clicker::GetClicks(TVirtualPad *canvas, int n, std::vector<std::string> &messages, int draw/*=0*/) {  
+    int Clicker::GetClicks(TVirtualPad *canvas, int n, std::vector<std::string> &messages, int draw/*=0*/, int print/*=0*/) {  
       if (draw==1) {
         line = new TGraph();
         line->SetLineColor(kRed);
@@ -147,11 +147,11 @@ namespace GamR {
         ++i;
         if (n>0 && i>=n) { break; }
         if (exit == 1 ) { break; }
-        if (i<messages.size()) {
+        if (n>0 && i<messages.size()) {
           std::cout << messages[i] << std::endl;
         }
-        else if (n<0 && messages.size()>0 ) {
-          std::cout << messages[0] << std::endl;
+        else if (n<=0 && messages.size()>0 ) {
+          std::cout << messages[0] << std::flush;
         }
         while (true) {
           waiting=false;
@@ -161,6 +161,9 @@ namespace GamR {
             delete obj;
             xs.push_back(cx);
             ys.push_back(cy);
+            if (print) {
+              std::cout << "(" << cx << "," << cy << ")" << std::endl;
+            }
             break;
           }
         }

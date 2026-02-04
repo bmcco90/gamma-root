@@ -34,6 +34,7 @@ namespace GamR {
     public:
       PeakFitGuesses() {
         //default values
+        fWidth = {1.,0.,20.};
         fStepAmp = {1.,0.,20.};
         fSkewAmp = {10,0,100};
         fSkewWidth = {2.5,0,10};

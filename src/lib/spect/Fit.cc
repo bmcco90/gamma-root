@@ -324,6 +324,9 @@ namespace GamR {
     }
 
     void GamR::Spect::PeakFit::SetGuesses(TH1 *hist, std::map<std::string, double> Peaks, std::vector<std::string> FixPeaks /*= {}*/) {
+      std::cout << "Inside SetGuesses" << std::endl;
+      std::cout << "checking FitGuesses" << std::endl;
+      fFitGuesses->Print();
       for (auto &peakKey : FixPeaks) {
         FixPeakEnergy(peakKey);
       }

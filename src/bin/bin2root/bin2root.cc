@@ -105,9 +105,9 @@ int main(int argc, char **argv)
 
                // make root spe
                if (ydim == 1) {
-                  mat1d = new TH1S(str2, str2, 4096, 0, 4096);
+                  mat1d = new TH1S(Form("ID%s",str2), Form("ID%s",str2), 4096, 0, 4096);
                } else if (ydim > 1) {
-                  mat2d = new TH2S(str2, str2, 4096, 0, 4096, ydim, 0, ydim);
+                  mat2d = new TH2S(Form("ID%s",str2), Form("ID%s",str2), 4096, 0, 4096, ydim, 0, ydim);
                } else {
                   printf("no data in %s\n", dir->d_name);
                   continue;
@@ -156,9 +156,9 @@ int main(int argc, char **argv)
 
                // make root spe
                if (ydim == 1) {
-                  spn1d = new TH1I(str2, str2, 4096, 0, 4096);
+                  spn1d = new TH1I(Form("ID%s",str2), Form("ID%s",str2), 4096, 0, 4096);
                } else if (ydim > 1) {
-                  spn2d = new TH2I(str2, str2, 4096, 0, 4096, ydim, 0, ydim);
+                  spn2d = new TH2I(Form("ID%s",str2), Form("ID%s",str2), 4096, 0, 4096, ydim, 0, ydim);
                } else {
                   printf("no data in %s\n", dir->d_name);
                   continue;
@@ -204,9 +204,9 @@ int main(int argc, char **argv)
 
                // make root spe
                if (ydim == 1) {
-                  sec1d = new TH1I(str2, str2, 8192, 0, 8192);
+                  sec1d = new TH1I(Form("ID%s",str2), Form("ID%s",str2), 8192, 0, 8192);
                } else if (ydim > 1) {
-                  sec2d = new TH2I(str2, str2, 8192, 0, 8192, ydim, 0, ydim);
+                  sec2d = new TH2I(Form("ID%s",str2), Form("ID%s",str2), 8192, 0, 8192, ydim, 0, ydim);
                } else {
                   printf("no data in %s\n", dir->d_name);
                   continue;

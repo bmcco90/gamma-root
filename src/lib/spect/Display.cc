@@ -584,6 +584,22 @@ namespace GamR {
       spectra[ind]->SetName(name.c_str());
       return;
     }        
+
+    void Cursor(TVirtualPad *canvas) {
+      if (!canvas) { if (gPad) { canvas = gPad->GetCanvas(); } else { std::cout << "No active canvas" << std::endl; return; } }
+
+      canvas->SetCrosshair(1);
+      GamR::Utils::Clicker click;
+      std::vector<std::string> messages = {"Cursor: "};
+      int retval = click.GetClicks(canvas, -1, messages, 0, 1);
+
+      if (retval > 0) { // quit prematurely
+        canvas->SetCrosshair(0);
+        std::cout << std::endl;
+        return;
+      }
+
+    }
   }
 }
 

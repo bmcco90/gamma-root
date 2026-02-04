@@ -8,7 +8,11 @@ namespace GamR {
     
     int LoadGuesses(std::string path) { int retval = gFitGuesses->Load(path); return retval;}
     
-    void Init() {
+    void Init() { 
+      //I have had issues with this function and scope. On some systems calling GamR::Spect::Init() seems to work 
+      //(i.e., initialize the global GamR::Spect::gFitGuesses variable), and in other cases it doesn't
+      //doing the initialization of the global variable and subsequent loading of parameters directly in the 
+      //gamrlogon_user.cc script - in the ROOT CLI - seems to fix this
       gFitGuesses = new PeakFitGuesses();
       std::string global_dir = "${CMAKE_INSTALL_PREFIX}/${GAMR_INSTALL_DATADIR}/FitGuesses.dat";
 

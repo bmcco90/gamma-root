@@ -1,0 +1,12 @@
+{
+  GamR::Spect::gFitGuesses = new GamR::Spect::PeakFitGuesses();
+  std::string global_dir = "${CMAKE_INSTALL_PREFIX}/${GAMR_INSTALL_DATADIR}/FitGuesses.dat";
+
+  if (GamR::Spect::gFitGuesses->Load("FitGuesses.dat")) {
+    GamR::Spect::gFitGuesses->Load(global_dir);
+  }
+  //if (GamR::Spect::LoadGuesses("FitGuesses.dat")) {
+  //  GamR::Spect::LoadGuesses(global_dir);
+ // }
+  GamR::Spect::Init();
+}

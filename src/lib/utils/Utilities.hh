@@ -30,7 +30,7 @@ namespace GamR {
       public:
         void GetClick(Int_t,Int_t,Int_t,TObject*);
         void GetDrawClick(Int_t,Int_t,Int_t,TObject*);
-        int GetClicks(TVirtualPad *canvas, int n, std::vector<std::string> &messages, int draw=0);
+        int GetClicks(TVirtualPad *canvas, int n, std::vector<std::string> &messages, int draw=0, int print=0);
         int px, py;
         double cx, cy;
         bool waiting=false;

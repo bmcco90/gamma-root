@@ -24,6 +24,7 @@ void help(std::string topic) {
     std::cout << "    px(), py()                      - projections into X- or Y- axes, operates on current Canvas" << std::endl;
     std::cout << "    gx(), gy()                      - interactive gating on X- or Y-axes" << std::endl;
     std::cout << "    bsx(), bsy()                    - interactive background subtraction" << std::endl;
+    std::cout << "    cs()                            - prints cursor click coordinates to screen" << std::endl;
     std::cout << std::endl;
     std::cout << "    pf()                            - fit (Gaussian) peaks" << std::endl;
     std::cout << "    pfconf()                        - configure fit parameters" << std::endl;
@@ -226,6 +227,7 @@ void rb(TVirtualPad *canvas , int rebin) { GamR::Spect::Rebin(canvas, rebin); }
 void ns(TVirtualPad *canvas, Option_t *option) { GamR::Spect::NormSpectra(canvas, option); }
 void nsbs(TVirtualPad *canvas) { GamR::Spect::NormSpectraBackSub(canvas); }
 void rn(TVirtualPad *canvas) { GamR::Spect::Rename(canvas); }
+void cs(TVirtualPad *canvas) { GamR::Spect::Cursor(canvas); }
 
 //2-D
 void ls2() { GamR::Spect::List2DSpectra(); }
