@@ -895,8 +895,12 @@ namespace GamR {
             if (!iQuiet){
               std::cout << "Lower bound: " << low << std::endl;
             }
+            double low_y = canvas->GetUymin();
+            if (canvas->GetLogy()) {
+              low_y = std::pow(10, low_y);
+            }
             TLine *line = new TLine(marker->GetX(), hist->GetBinContent(hist->FindBin(marker->GetX())), marker->GetX(),
-                                    canvas->GetUymin());
+                                    low_y );
             line->Draw();
             bounds.push_back(line);
           } else if (peaks == -1) {
@@ -904,8 +908,12 @@ namespace GamR {
             if (!iQuiet){
               std::cout << "Upper bound: " << high << std::endl;
             }
+            double low_y = canvas->GetUymin();
+            if (canvas->GetLogy()) {
+              low_y = std::pow(10, low_y);
+            }
             TLine *line = new TLine(marker->GetX(), hist->GetBinContent(hist->FindBin(marker->GetX())), marker->GetX(),
-                                    canvas->GetUymin());
+                                    low_y);
             line->Draw();
             bounds.push_back(line);
           } else {
